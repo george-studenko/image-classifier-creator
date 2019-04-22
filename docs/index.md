@@ -44,7 +44,7 @@ The first param is mandatory and it is the path to the dataset folder, example:
 ## Checkpoints
 Once the training process finishes a checkpoint will be saved automatically inside the checkpoints folder, if a previous checkpoint exists with the default name then the script will overwrite it.
 
-### Inference
+## Inference
 To run a prediction or infere if an image is a ```Hotdog``` or a ```Not Hotdog``` I've included some images that are not part of the dataset used previously inside the folder ```predict_img```
 Inside that folder I created 2 subfolders, one for each class in order to get the true label printed out, but this is not necesarily a requirement.  
 
