@@ -25,8 +25,8 @@ To train a model you can use either Densenet or Resnet pre-trained models
   
 ![Train with GPU for 10 epochs using densenet output](assets/train-densenet.png)  
   
- ### Train with GPU for 40 epochs using resnet
-```python train.py dataset --gpu --epochs 40 --arch resnet```  
+### Train with GPU for 40 epochs using resnet  
+```python train.py dataset --gpu --epochs 40 --arch resnet```    
   
 ## Checkpoints
 Once the training process finishes a checkpoint will be saved automatically inside the checkpoints folder, if a previous checkpoint exists with the default name then the script will overwrite it.
@@ -37,3 +37,8 @@ I've created my own implementation of the ```Hotdog Not Hotdog``` image classifi
 [Hotdog Not Hotdog repo](https://github.com/george-studenko/Hotdog-not-Hotdog)  
   
 ![Hotdog not hotdog classifier](assets/hotdog-classifier.png)  
+
+You can use that repo as an example.
+
+## Collaborating with the repo
+Pull requests are welcome, either for fixing bugs or implementing new pre-trained networks or customizable params.
