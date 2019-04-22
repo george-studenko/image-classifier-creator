@@ -31,10 +31,39 @@ To train a model you can use either Densenet or Resnet pre-trained models
 ## Checkpoints
 Once the training process finishes a checkpoint will be saved automatically inside the checkpoints folder, if a previous checkpoint exists with the default name then the script will overwrite it.
 
-## Sample Image classifier
-I've created my own implementation of the ```Hotdog Not Hotdog``` image classifier using this framework:  
+### Inference
+To run a prediction or infere if an image is a ```Hotdog``` or a ```Not Hotdog``` I've included some images that are not part of the dataset used previously inside the folder ```predict_img```
+Inside that folder I created 2 subfolders, one for each class in order to get the true label printed out, but this is not necesarily a requirement.
+### Making a prediction with the default checkpoint
+
+Without GPU and True Label (only images inside the predict_img will print a true label)  
+```python predict.py predict_img/0/nh1.jpg```  
   
-[Hotdog Not Hotdog repo](https://github.com/george-studenko/Hotdog-not-Hotdog)  
+With GPU and True Label  
+```python predict.py predict_img/1/h1.jpg --gpu```  
+
+Without GPU and without true label    
+```python predict.py test_img1.jpg```  
+  
+![Predict](assets/predict.png)
+
+```python predict.py test_img2.jpg --show_probs```  
+  
+  ![Predict](assets/show_probs.png)
+
+Please note that ```show_probs``` is at the moment working only for ```densenet```, the values for ```resnet``` won't be correct.  
+
+Predict with top_k parameter  
+```python predict.py predict_img/1/h1.jpg --show_probs --top_k 2  --gpu```  
+  
+![Predict](assets/top_k.png)
+
+
+Top_k indicates that we want to get probabilities for the top k classes (since this is a binary classifier k max values is 2)
+  
+
+## Sample Image classifier
+I've created my own implementation of the [Hotdog Not Hotdog repo](https://github.com/george-studenko/Hotdog-not-Hotdog)   image classifier using this framework:  
   
 ![Hotdog not hotdog classifier](assets/hotdog-classifier.png)  
 
