@@ -20,7 +20,7 @@ To train a model you can use either Densenet or Resnet pre-trained models
 * Set the number of epochs to train with the ```--epochs``` parameter
 * Set the pretrained network to use with the ```--arch``` parameter
 
-### train.py params
+## train.py params
 #### Mandatory params
 The first param is mandatory and it is the path to the dataset folder, example:  
 ```python train.py dataset```  
@@ -46,7 +46,20 @@ Once the training process finishes a checkpoint will be saved automatically insi
 
 ### Inference
 To run a prediction or infere if an image is a ```Hotdog``` or a ```Not Hotdog``` I've included some images that are not part of the dataset used previously inside the folder ```predict_img```
-Inside that folder I created 2 subfolders, one for each class in order to get the true label printed out, but this is not necesarily a requirement.
+Inside that folder I created 2 subfolders, one for each class in order to get the true label printed out, but this is not necesarily a requirement.  
+
+## predict.py params
+#### Mandatory params
+The first param is mandatory and it is the image_path to the image you want to classify example:  
+```python predict.py predict_img/0/nh1.jpg```    
+#### Optional params
+* ```--checkpoint_folder``` Path to checkpoint folder default value ```checkpoints```
+* ```--checkpoint_file``` Checkpoint file name inside the checkpoint_folder default value ```checkpoint.pth```
+* ```--top_k``` Top K probabilities to show default value ```1```
+* ```--category_names``` Category names json file default value ```cat_to_name.json```
+* ```--gpu``` use GPU for inference if not specified it will use CPU
+* ```--show_probs``` Show Probabilities percentages if not specified it will not show this information, there is a screenshot below that explains this param more in detail below
+
 ### Making a prediction with the default checkpoint
 
 Without GPU and True Label (only images inside the predict_img will print a true label)  
