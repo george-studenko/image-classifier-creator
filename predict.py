@@ -10,8 +10,7 @@ def main():
     input_args = get_predict_input_args()
 
     image_path = input_args.image_path
-    checkpoint_file = '/checkpoint.pth'
-    checkpoint_path = input_args.checkpoint + checkpoint_file
+    checkpoint_path = input_args.checkpoint_folder + '/' + input_args.checkpoint_file
     top_k = input_args.top_k
     show_p = input_args.show_probs
     number_of_classes = input_args.number_of_classes
