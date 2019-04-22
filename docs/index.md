@@ -20,6 +20,19 @@ To train a model you can use either Densenet or Resnet pre-trained models
 * Set the number of epochs to train with the ```--epochs``` parameter
 * Set the pretrained network to use with the ```--arch``` parameter
 
+### train.py params
+#### Mandatory params
+The first param is mandatory and it is the path to the dataset folder, example:  
+```python train.py dataset```  
+#### Optional params
+* ```--save_dir``` is the folder where checkpoints will be saved default value ```checkpoints/```  
+* ```--arch``` is the Pretrained model architecture to use for image classification possible values are ```resnet``` and ```densenet``` default value ```densenet```  
+* ```--learning_rate``` specifies the Learning rate to be used default value ```0.0015```    
+* ```--epochs``` number of Epochs for the training default value ```15```      
+* ```--hidden_units``` Hidden units to use in the classifier default value ```512```  
+* ```--number_of_classes``` Number of classes to classify, it is being used as the output of the classifier default value ```2``` (for binary classifiers)  
+* ```--gpu``` specifies if you want to use GPU for training if not specified it will use CPU
+    
 ### Train with GPU for 10 epochs using densenet
 ```python train.py dataset --gpu --epochs 10 --arch densenet```  
   
